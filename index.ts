@@ -11,8 +11,12 @@ const bootstrap = async () => {
 
   const app = express();
   server.applyMiddleware({ app });
-
   const port = 4000;
+
+  app.use(express.static("dist/front"));
+  app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/front/index.html");
+  });
 
   app.listen({ port }, () =>
     console.log(
