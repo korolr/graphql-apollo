@@ -7,6 +7,6 @@ export const User = `
         token       : String
         admin       : Boolean
         money       : Float
-        basket      : [Basket]
+        basket_id   : Float
     }
 `;

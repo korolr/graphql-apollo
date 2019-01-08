@@ -29,14 +29,6 @@ export const databaseInitializer = async () => {
     //   console.log("item saved");
     // });
 
-    // let basket = new Basket();
-    // basket.id = Math.random() * Math.floor(10000);
-    // basket.item = [item];
-
-    // connection.manager.save(basket).then(card => {
-    //   console.log("basket saved");
-    // });
-
     // let data = new User();
     // data.id = Math.random() * Math.floor(10000);
     // data.admin = true;
@@ -45,7 +37,21 @@ export const databaseInitializer = async () => {
     // data.password = "123";
     // data.token = "AAAA";
     // data.money = 5000;
-    // data.basket = basket;
+    // data.basket_id = Math.random() * Math.floor(10000);
+
+    // let basket = new Basket();
+    // basket.id = data.basket_id;
+    // basket.name = item.name;
+    // basket.description = item.description;
+    // basket.imageUrl = item.imageUrl;
+    // basket.category = item.category;
+    // basket.countDB = item.count;
+    // basket.countUser = 1;
+    // basket.price = item.price;
+
+    // connection.manager.save(basket).then(card => {
+    //   console.log("basket saved");
+    // });
 
     // // Persist to database
     // return connection.manager.save(data).then(card => {

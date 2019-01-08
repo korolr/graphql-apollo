@@ -1,3 +1,4 @@
+import { Mutation } from "./types/mutation";
 import { Query } from "./types/query";
 import { merge } from "lodash";
 import { makeExecutableSchema } from "graphql-tools";
@@ -13,12 +14,10 @@ export const auth = {
   context: async ({ req }) => {
     // get the user token from the headers
     const token = req.headers.authorization || "";
-    console.log(token);
     const repository = getManager().getRepository(Auth.User);
     // try to retrieve a user with the token
     const user = await repository.findOne({ token: token });
     // add the user to the context
-    console.log(user);
     return { user };
   }
 };
@@ -26,6 +25,7 @@ export const auth = {
 export const schema = makeExecutableSchema({
   typeDefs: [
     Query,
+    Mutation,
     User,
     Item,
     Basket

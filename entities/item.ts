@@ -1,5 +1,4 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from "typeorm";
-import { Basket } from "./basket";
 @Entity()
 export class Item {
   @PrimaryGeneratedColumn()
@@ -22,7 +21,4 @@ export class Item {
 
   @Column({ default: 0 })
   price: number;
-
-  @ManyToMany(type => Basket, basket => basket.item)
-  basket: Basket[];
 }

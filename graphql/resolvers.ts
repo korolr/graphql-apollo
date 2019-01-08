@@ -7,6 +7,9 @@ import { itemsResolver } from "./resolvers/item/items";
 
 import { basketResolver } from "./resolvers/basket/basket";
 
+import { userLoginMutation } from "./mutation/user/userLogin";
+import { userRegMutation } from "./mutation/user/userReg";
+
 export const resolvers = {
   Query: {
     ...userResolver,
@@ -15,5 +18,9 @@ export const resolvers = {
     ...itemResolver,
     ...itemsResolver,
     ...basketResolver
+  },
+  Mutation: {
+    ...userRegMutation,
+    ...userLoginMutation
   }
 };

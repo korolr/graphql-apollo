@@ -3,7 +3,8 @@ import {
   Column,
   PrimaryGeneratedColumn,
   OneToOne,
-  JoinColumn
+  JoinColumn,
+  Generated
 } from "typeorm";
 import { Basket } from "./basket";
 @Entity()
@@ -11,7 +12,7 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 30, nullable: false })
+  @Column({ length: 30, nullable: false, unique: true })
   login: string;
 
   @Column({ length: 50, nullable: false })
@@ -29,7 +30,7 @@ export class User {
   @Column({ default: 0 })
   money: number;
 
-  @OneToOne(type => Basket)
-  @JoinColumn()
-  basket: Basket;
+  @Generated("uuid")
+  @Column()
+  basket_id: number;
 }

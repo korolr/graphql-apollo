@@ -7,6 +7,5 @@ export const Item = `
         category    : String
         count       : Float
         price       : Float
-        basket      : [Basket]
     }
 `;

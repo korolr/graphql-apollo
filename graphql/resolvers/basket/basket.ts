@@ -6,14 +6,8 @@ export const basketResolver = {
     const repository = getManager().getRepository(Basket);
 
     const data = await repository.find({
-      join: {
-        alias: "basket",
-        leftJoinAndSelect: {
-          item: "basket.item"
-        }
-      },
       where: { id: id }
     });
-    return data[0];
+    return data;
   }
 };
