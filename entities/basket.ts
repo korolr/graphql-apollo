@@ -5,6 +5,9 @@ export class Basket {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ nullable: false })
+  user_id: string;
+
   @Column({ length: 80, nullable: false })
   name: string;
 
@@ -16,6 +19,9 @@ export class Basket {
 
   @Column({ length: 50, nullable: false })
   category: string;
+
+  @Column({ length: 50, nullable: false })
+  status: string;
 
   @Column({ default: 0 })
   countDB: number;

@@ -9,7 +9,7 @@ import {
 import { Basket } from "./basket";
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("increment")
   id: number;
 
   @Column({ length: 30, nullable: false, unique: true })
@@ -29,8 +29,4 @@ export class User {
 
   @Column({ default: 0 })
   money: number;
-
-  @Generated("uuid")
-  @Column()
-  basket_id: number;
 }

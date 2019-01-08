@@ -7,6 +7,6 @@ export const Query = `
         items: [Item]
         item(id: Float!): Item
 
-        basket(id: Float!): [Basket]
+        basketGet: [Basket]
     }
 `;

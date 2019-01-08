@@ -5,10 +5,13 @@ import { userAdminResolver } from "./resolvers/user/userAdmin";
 import { itemResolver } from "./resolvers/item/item";
 import { itemsResolver } from "./resolvers/item/items";
 
-import { basketResolver } from "./resolvers/basket/basket";
+import { basketGetResolver } from "./resolvers/basket/basketGet";
 
 import { userLoginMutation } from "./mutation/user/userLogin";
 import { userRegMutation } from "./mutation/user/userReg";
+import { userResetMutation } from "./mutation/user/userResetToken";
+import { basketAddMutation } from "./mutation/basket/basketAdd";
+import { basketBuyMutation } from "./mutation/basket/basketBuy";
 
 export const resolvers = {
   Query: {
@@ -17,10 +20,13 @@ export const resolvers = {
     ...userAdminResolver,
     ...itemResolver,
     ...itemsResolver,
-    ...basketResolver
+    ...basketGetResolver
   },
   Mutation: {
     ...userRegMutation,
-    ...userLoginMutation
+    ...userLoginMutation,
+    ...userResetMutation,
+    ...basketAddMutation,
+    ...basketBuyMutation
   }
 };

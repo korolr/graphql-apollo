@@ -1,12 +1,13 @@
 import { Basket } from "../../../entities/basket";
 import { getManager } from "typeorm";
 
-export const basketResolver = {
-  async basket(obj, { id }, context, info) {
+export const basketGetResolver = {
+  async basketGet(obj, {}, context, info) {
     const repository = getManager().getRepository(Basket);
+    if (!context.user) return null;
 
     const data = await repository.find({
-      where: { id: id }
+      where: { user_id: context.user.id, status: "В корзине" }
     });
     return data;
   }

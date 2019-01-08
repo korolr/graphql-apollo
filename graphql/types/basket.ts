@@ -5,6 +5,7 @@ export const Basket = `
         description : String
         imageUrl    : String
         category    : String
+        status      : String
         countDB     : Float
         countUser   : Float
         price       : Float
