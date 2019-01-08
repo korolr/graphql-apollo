@@ -1,12 +1,4 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  OneToOne,
-  JoinColumn,
-  Generated
-} from "typeorm";
-import { Basket } from "./basket";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 @Entity()
 export class User {
   @PrimaryGeneratedColumn("increment")

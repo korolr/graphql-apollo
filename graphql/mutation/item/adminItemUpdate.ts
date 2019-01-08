@@ -2,7 +2,7 @@ import { getManager } from "typeorm";
 import { Item } from "../../../entities/item";
 
 export const adminItemUpdateMutation = {
-  async adminItemAdd(obj, { input }, context, info) {
+  async adminItemUpdate(obj, { input }, context, info) {
     if (!context.user || context.user.admin) return null;
     const repository = getManager();
 
@@ -14,11 +14,12 @@ export const adminItemUpdateMutation = {
         description: input.description,
         imageUrl: input.imageUrl,
         category: input.category,
-        count: input.count,
+        count: input.countDB,
         price: input.price
       })
       .where({ id: input.id })
       .execute();
+
     return "Успех";
   }
 };

@@ -1,8 +1,8 @@
 export const Query = `
     type Query {
-        adminUsers: [User]
         user(id: Float!): User
-
+        adminUsers: [User]
+        
         items: [Item]
         item(id: Float!): Item
 

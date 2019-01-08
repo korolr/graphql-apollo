@@ -6,13 +6,6 @@ import { itemsResolver } from "./resolvers/item/items";
 
 import { basketGetResolver } from "./resolvers/basket/basketGet";
 
-import { userLoginMutation } from "./mutation/user/userLogin";
-import { userRegMutation } from "./mutation/user/userReg";
-import { userResetMutation } from "./mutation/user/userResetToken";
-import { basketAddMutation } from "./mutation/basket/basketAdd";
-import { basketBuyMutation } from "./mutation/basket/basketBuy";
-import { adminItemAddMutation } from "./mutation/item/adminItemAdd";
-
 export const resolvers = {
   Query: {
     ...userResolver,
@@ -20,13 +13,5 @@ export const resolvers = {
     ...itemResolver,
     ...itemsResolver,
     ...basketGetResolver
-  },
-  Mutation: {
-    ...userRegMutation,
-    ...userLoginMutation,
-    ...userResetMutation,
-    ...basketAddMutation,
-    ...basketBuyMutation,
-    ...adminItemAddMutation
   }
 };

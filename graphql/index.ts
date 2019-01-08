@@ -1,14 +1,15 @@
+import { merge } from "lodash";
+import { getManager } from "typeorm";
+import { makeExecutableSchema } from "graphql-tools";
+
+import { User } from "./types/user";
 import { Mutation } from "./types/mutation";
 import { Query } from "./types/query";
-import { merge } from "lodash";
-import { makeExecutableSchema } from "graphql-tools";
-import { User } from "./types/user";
 import { Item } from "./types/item";
 import { Basket } from "./types/basket";
 import * as Auth from "../entities/user";
-import { getManager } from "typeorm";
-// Import typedefs and resolvers here from ./entities/ folder
 import { resolvers } from "./resolvers";
+import { mutations } from "./mutations";
 
 export const auth = {
   context: async ({ req }) => {
@@ -23,14 +24,6 @@ export const auth = {
 };
 
 export const schema = makeExecutableSchema({
-  typeDefs: [
-    Query,
-    Mutation,
-    User,
-    Item,
-    Basket
-    // Include typedefs here
-  ],
-  resolvers: merge(resolvers)
-  // Include resolvers here
+  typeDefs: [Query, Mutation, User, Item, Basket],
+  resolvers: merge(resolvers, mutations)
 });

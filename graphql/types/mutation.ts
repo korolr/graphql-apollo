@@ -9,15 +9,17 @@ export const Mutation = `
         basketUpdate(id: Float!, count: Float!): String
 
         adminItemAdd(input: InputItem): String
+        adminItemUpdate(input: InputItem): String
         
     }
 
     input InputItem {
+        id          : Float
         name        : String
         description : String
         imageUrl    : String
         category    : String
-        countDB:    : Float
-        price:      : Float
+        countDB     : Float
+        price       : Float
     }
 `;
