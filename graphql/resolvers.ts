@@ -1,6 +1,5 @@
 import { userResolver } from "./resolvers/user/user";
-import { usersResolver } from "./resolvers/user/users";
-import { userAdminResolver } from "./resolvers/user/userAdmin";
+import { adminUsersResolver } from "./resolvers/user/adminUsers";
 
 import { itemResolver } from "./resolvers/item/item";
 import { itemsResolver } from "./resolvers/item/items";
@@ -12,12 +11,12 @@ import { userRegMutation } from "./mutation/user/userReg";
 import { userResetMutation } from "./mutation/user/userResetToken";
 import { basketAddMutation } from "./mutation/basket/basketAdd";
 import { basketBuyMutation } from "./mutation/basket/basketBuy";
+import { adminItemAddMutation } from "./mutation/item/adminItemAdd";
 
 export const resolvers = {
   Query: {
     ...userResolver,
-    ...usersResolver,
-    ...userAdminResolver,
+    ...adminUsersResolver,
     ...itemResolver,
     ...itemsResolver,
     ...basketGetResolver
@@ -27,6 +26,7 @@ export const resolvers = {
     ...userLoginMutation,
     ...userResetMutation,
     ...basketAddMutation,
-    ...basketBuyMutation
+    ...basketBuyMutation,
+    ...adminItemAddMutation
   }
 };

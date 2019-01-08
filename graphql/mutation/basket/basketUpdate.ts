@@ -3,8 +3,8 @@ import { getManager } from "typeorm";
 
 export const basketUpdateMutation = {
   async basketUpdate(obj, { id, count }, context, info) {
-    const repository = getManager();
     if (!context.user) return null;
+    const repository = getManager();
 
     await repository
       .createQueryBuilder()
