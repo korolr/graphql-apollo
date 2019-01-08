@@ -1,7 +1,3 @@
-//
-// graphql/types/user.ts
-//
-
 export const User = `
     type User {
         id          : Float
@@ -10,5 +6,7 @@ export const User = `
         address     : String
         token       : String
         admin       : Boolean
+        money       : Float
+        basket      : [Basket]
     }
 `;

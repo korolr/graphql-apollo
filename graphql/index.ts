@@ -2,6 +2,8 @@ import { Query } from "./types/query";
 import { merge } from "lodash";
 import { makeExecutableSchema } from "graphql-tools";
 import { User } from "./types/user";
+import { Item } from "./types/item";
+import { Basket } from "./types/basket";
 import * as Auth from "../entities/user";
 import { getManager } from "typeorm";
 // Import typedefs and resolvers here from ./entities/ folder
@@ -24,7 +26,9 @@ export const auth = {
 export const schema = makeExecutableSchema({
   typeDefs: [
     Query,
-    User
+    User,
+    Item,
+    Basket
     // Include typedefs here
   ],
   resolvers: merge(resolvers)
