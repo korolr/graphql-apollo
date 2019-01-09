@@ -10,6 +10,8 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import history from "./history";
 import App from "./components/App";
 
+import "../node_modules/antd/dist/antd.min.css";
+
 const cache = new InMemoryCache();
 
 const URL = "http://localhost:4000/graphql";
