@@ -1,6 +1,6 @@
 export const Query = `
     type Query {
-        user(id: Float!): User
+        user: User
         adminUsers: [User]
         
         items: [Item]

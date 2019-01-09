@@ -1,4 +1,4 @@
-import { userResolver } from "./resolvers/user/user";
+import { userResolver } from "./resolvers/user/adminUser";
 import { adminUsersResolver } from "./resolvers/user/adminUsers";
 
 import { itemResolver } from "./resolvers/item/item";

@@ -11,7 +11,7 @@ const req = gql`
     }
   }
 `;
-const App = () => {
+const Home = () => {
   return (
     <Query query={req}>
       {({ loading, data }) => {
@@ -30,4 +30,4 @@ const App = () => {
     </Query>
   );
 };
-export default App;
+export default Home;
