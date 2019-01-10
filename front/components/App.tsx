@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import Header from "./Header";
 import Home from "./Home";
+import Login from "./Login";
 import { Layout } from "antd";
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <PrivateRoute path="/basket" component={Home} isAuth={true} />
+            <Route exact path="/login" component={Login} />
           </Switch>
         </Header>
       </Layout>

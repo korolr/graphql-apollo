@@ -1,9 +1,10 @@
 import * as React from "react";
 import { Layout, Menu, Icon } from "antd";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
-
 
 const MenuRight = styled.li`
   float: right;
@@ -20,7 +21,10 @@ const App = (props: any) => {
           defaultSelectedKeys={["2"]}
           style={{ lineHeight: "64px" }}
         >
-          <Menu.Item>Главная</Menu.Item>
+          <Menu.Item>
+            <Link to="/">Главная</Link>
+          </Menu.Item>
+
           <MenuRight>
             <Menu.Item>Корзина</Menu.Item>
           </MenuRight>
@@ -43,7 +47,9 @@ const App = (props: any) => {
                 </span>
               }
             >
-              <Menu.Item>Войти</Menu.Item>
+              <Menu.Item>
+                <Link to="/login">Войти</Link>
+              </Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub2"
