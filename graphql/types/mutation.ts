@@ -1,7 +1,7 @@
 export const Mutation = `
     type Mutation {
         userReg(login: String!, password: String!, address: String! ): String
-        userLogin(login: String!, password: String! ): User
+        userLogin(login: String!, password: String! ): String
         userResetToken: String
 
         basketAdd(item: InputItem, count: Float!): String

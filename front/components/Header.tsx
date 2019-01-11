@@ -26,7 +26,9 @@ const App = (props: any) => {
           </Menu.Item>
 
           <MenuRight>
-            <Menu.Item>Корзина</Menu.Item>
+            <Link to="/bas">
+              <Menu.Item>Корзина</Menu.Item>
+            </Link>
           </MenuRight>
         </Menu>
       </Header>

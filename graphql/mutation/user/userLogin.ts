@@ -12,8 +12,9 @@ export const userLoginMutation = {
       login: login,
       password: hash
     });
-    data.token = randomBytes(64).toString("hex");
+    const token = randomBytes(64).toString("hex");
+    data.token = token;
     await repository.save(data);
-    return data;
+    return token;
   }
 };

@@ -45,14 +45,14 @@ class Home extends React.Component<Props, State> {
     super(props);
     this.state = {
       minValue: 0,
-      maxValue: 16
+      maxValue: 18
     };
   }
 
   handleChange = (value: number) => {
     this.setState({
-      minValue: value * 16,
-      maxValue: value * 16 + 16
+      minValue: value * 18,
+      maxValue: value * 18 + 18
     });
   };
 
@@ -88,7 +88,7 @@ class Home extends React.Component<Props, State> {
                   defaultCurrent={1}
                   defaultPageSize={1} //default size of page
                   onChange={this.handleChange}
-                  total={data.items.length / 16} //total number of card data available
+                  total={data.items.length / 18} //total number of card data available
                 />
               </PaginationPosition>
             </div>

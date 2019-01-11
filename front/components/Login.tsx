@@ -4,6 +4,8 @@ import styled from "styled-components";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
 
+import { client } from "../index";
+
 const FormStyle = styled.div`
   max-width: 350px;
   height: 40px;
@@ -11,9 +13,7 @@ const FormStyle = styled.div`
 
 const loginMut = gql`
   mutation($l: String!, $p: String!) {
-    userLogin(login: $l, password: $p) {
-      token
-    }
+    userLogin(login: $l, password: $p)
   }
 `;
 
@@ -25,14 +25,6 @@ class NormalLoginForm extends React.Component<any, any> {
       password: ""
     };
   }
-  handleSubmit = (e: any) => {
-    e.preventDefault();
-    this.props.form.validateFields((err: any, values: any) => {
-      if (!err) {
-        console.log("Received values of form: ", values);
-      }
-    });
-  };
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -48,6 +40,9 @@ class NormalLoginForm extends React.Component<any, any> {
                     console.log("Received values of form: ", values);
                     userLogin({
                       variables: { l: values.userName, p: values.password }
+                    }).then((token: any) => {
+                      localStorage.setItem("token", token.data.userLogin);
+                      client.resetStore();
                     });
                   }
                 });
@@ -92,7 +87,6 @@ class NormalLoginForm extends React.Component<any, any> {
                   Log in
                 </Button>
                 Or <a href="">register now!</a>
-                <p>{data === undefined ? null : data.userLogin.token}</p>
               </Form.Item>
             </Form>
           </FormStyle>
