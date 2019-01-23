@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc -w",
+    "start": "/node_modules/typescript/bin/tsc -w",
     "watch": "nodemon dist/index.js --ignore '/dist/front/*'",
-    "frontdev": "parcel front/index.html --out-dir dist/front",
-    "frontbuild": "parcel build front/index.html --out-dir dist/front",
+    "frontdev": "node node_modules/parcel/bin/cli.js --out-dir dist/front",
+    "frontbuild": "node node_modules/parcel/bin/cli.js build front/index.html --out-dir dist/front",
     "postinstall": "tsc && npm run frontbuild"
   },
   "author": "korolr",
@@ -28,6 +28,7 @@
     "loadash": "^1.0.0",
     "md5": "^2.2.1",
     "mysql": "^2.16.0",
+    "parcel": "^1.11.0",
     "react": "^16.7.0",
     "react-apollo": "^2.3.3",
     "react-dom": "^16.7.0",
