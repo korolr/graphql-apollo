@@ -9,7 +9,7 @@
     "watch": "nodemon dist/index.js --ignore '/dist/front/*'",
     "frontdev": "node node_modules/parcel/bin/cli.js --out-dir dist/front",
     "frontbuild": "node node_modules/parcel/bin/cli.js build front/index.html --out-dir dist/front",
-    "postinstall": "tsc && npm run frontbuild"
+    "postinstall": "tsc --build && npm run frontbuild"
   },
   "author": "korolr",
   "license": "ISC",
