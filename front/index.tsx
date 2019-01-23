@@ -13,7 +13,7 @@ import App from "./components/App";
 
 import "../node_modules/antd/dist/antd.min.css";
 
-const URL = "http://localhost:4000/graphql";
+const URL = "/graphql";
 
 const httpLink = createHttpLink({
   uri: URL
