@@ -11,7 +11,7 @@ const bootstrap = async () => {
 
   const app = express();
   server.applyMiddleware({ app });
-  const port = 4000;
+  const port = process.env.PORT || 4000;
 
   app.use(express.static("dist/front"));
   app.get("/", function(req, res) {
@@ -25,6 +25,6 @@ const bootstrap = async () => {
   );
 };
 
-require('dotenv').config()
+require("dotenv").config();
 
 bootstrap();
