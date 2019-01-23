@@ -8,7 +8,8 @@
     "start": "tsc -w",
     "watch": "nodemon dist/index.js --ignore '/dist/front/*'",
     "frontdev": "parcel front/index.html --out-dir dist/front",
-    "frontbuild": "parcel build front/index.html --out-dir dist/front"
+    "frontbuild": "parcel build front/index.html --out-dir dist/front",
+    "postinstall": "tsc && npm run frontbuild"
   },
   "author": "korolr",
   "license": "ISC",
