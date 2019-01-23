@@ -5,12 +5,8 @@ import { createConnection } from "typeorm";
 
 export const databaseInitializer = async () => {
   return await createConnection({
-    type: "mysql",
-    host: "localhost",
-    port: 3306,
-    username: "korolr",
-    password: "1234",
-    database: "db1",
+    type: "postgres",
+    url: process.env.DATABASE_URL,
     entities: [User, Item, Basket],
     synchronize: true
   }).then(connection => {

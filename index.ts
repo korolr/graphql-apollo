@@ -25,4 +25,6 @@ const bootstrap = async () => {
   );
 };
 
+require('dotenv').config()
+
 bootstrap();
