@@ -13,7 +13,8 @@ import App from "./components/App";
 
 import "../node_modules/antd/dist/antd.min.css";
 
-const URL = "/graphql";
+const URL =
+  process.env.NODE_ENV === "production" ? "/graphql" : process.env.FRONT_URL;
 
 const httpLink = createHttpLink({
   uri: URL
